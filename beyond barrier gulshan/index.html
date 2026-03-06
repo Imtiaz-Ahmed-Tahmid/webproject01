@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond Barriers Gulshan</title>
+
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8fbff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 60px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    z-index: 1000;
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #267acc;
+}
+
+/* HERO SECTION */
+header {
+    height: 120vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('images/header-bg.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.header-text h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.header-text p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    padding: 14px 32px;
+    background: #4da6ff;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #267acc;
+    transform: translateY(-4px);
+}
+
+/* SECTIONS */
+section {
+    padding: 100px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 40px;
+    color: #267acc;
+}
+
+/* SERVICES GRID */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.card ul li {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.card-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: #4da6ff;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.card-btn:hover {
+    background: #267acc;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.testimonials {
+    background: white;
+    text-align: center;
+}
+
+.testimonial-card {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+    font-style: italic;
+}
+
+.card, .testimonial-card, .why-grid div {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s ease;
+}
+
+.why-us {
+    background: #f0f6ff;
+    text-align: center;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+    font-size: 18px;
+}
+
+/* ABOUT SECTION */
+.about-section {
+    
+    background: rgb(225, 207, 207);
+}
+    
+
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.about-image img {
+    width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-content {
+    max-width: 500px;
+}
+
+.about-content h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: #267acc;
+}
+
+.about-intro {
+    font-size: 18px;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.about-points {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.about-points li {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.about-btn {
+    padding: 12px 28px;
+    background: #4da6ff;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.about-btn:hover {
+    background: #267acc;
+}
+
+/* PROGRAMS */
+#programs ul {
+    list-style: none;
+    text-align: center;
+}
+
+#programs li {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    background: #f0f6ff;
+    text-align: center;
+}
+
+.contact-subtitle {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    font-size: 17px;
+    color: #555;
+}
+
+.contact-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 280px;
+    text-align: left;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+    color: #267acc;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #25D366;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background: #1ebe5d;
+}
+
+.map-container {
+    margin-top: 50px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+
+/* FOOTER */
+footer {
+    background: #267acc;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* SPACING FIX FOR FIXED NAV */
+body::before {
+    content: "";
+    display: block;
+    height: 70px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="images/logo.jpg" alt="Beyond Barriers Logo">
+    </div>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#programs">Programs</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<header id="home">
+    <div class="header-text">
+        <h1>Beyond Barriers Gulshan</h1>
+        <p>Professional intervention centre supporting autism and neurodiverse children with evidence-based therapy.</p>
+        <a href="#contact" class="hero-btn">Book Appointment</a>
+    </div>
+</header>
+
+<section id="about" class="about-section">
+
+    <div class="about-container">
+
+        <div class="about-image">
+            <img src="images/fine-motor.jpg" alt="Therapy Session">
+        </div>
+
+        <div class="about-content">
+            <h2>About Beyond Barriers Gulshan</h2>
+            <p class="about-intro">
+                We are a specialized intervention centre dedicated to supporting 
+                children with autism and neurodevelopmental differences through 
+                evidence-based, compassionate care.
+            </p>
+
+            <ul class="about-points">
+                <li>✔ Individualized therapy plans</li>
+                <li>✔ Sensory integration & motor development</li>
+                <li>✔ Family-centered intervention approach</li>
+                <li>✔ Structured communication programs</li>
+            </ul>
+
+            <a href="#contact" class="about-btn">Schedule Consultation</a>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="services">
+    <h2>Our Specialized Services</h2>
+
+    <div class="services">
+
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="service-icon">🧠</div>
+            <h3>Developmental Assessment</h3>
+            <p>Comprehensive evaluation of sensory, motor, cognitive, and communication skills.</p>
+            <ul>
+                <li>✔ Standardized assessment tools</li>
+                <li>✔ Parent consultation</li>
+                <li>✔ Individual therapy planning</li>
+            </ul>
+            <a href="#contact" class="card-btn">Book Assessment</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="service-icon">🌈</div>
+            <h3>Autism Intervention</h3>
+            <p>Structured therapy programs designed to improve communication and independence.</p>
+            <ul>
+                <li>✔ Social skills training</li>
+                <li>✔ Behavior support</li>
+                <li>✔ Play-based learning</li>
+            </ul>
+            <a href="#contact" class="card-btn">Learn More</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="service-icon">⚖️</div>
+            <h3>Sensory Integration Therapy</h3>
+            <p>Therapeutic activities targeting vestibular, proprioceptive, and tactile systems.</p>
+            <ul>
+                <li>✔ Sensory regulation</li>
+                <li>✔ Motor coordination</li>
+                <li>✔ Self-regulation skills</li>
+            </ul>
+            <a href="#contact" class="card-btn">Explore</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="service-icon">💬</div>
+            <h3>Speech & Communication Therapy</h3>
+            <p>Enhancing expressive and receptive language development.</p>
+            <ul>
+                <li>✔ Articulation therapy</li>
+                <li>✔ Language development</li>
+                <li>✔ Social communication</li>
+            </ul>
+            <a href="#contact" class="card-btn">Consult Now</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="why-us">
+    <h2>Why Choose Beyond Barriers?</h2>
+    <div class="why-grid">
+        <div>✔ Evidence-Based Therapy</div>
+        <div>✔ Experienced Professionals</div>
+        <div>✔ Family-Centered Care</div>
+        <div>✔ Individualized Plans</div>
+        <div>✔ Safe Sensory-Friendly Environment</div>
+        <div>✔ Measurable Progress Tracking</div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2>Parent Testimonials</h2>
+
+    <div class="testimonial-card">
+        <p>"My child’s communication improved dramatically within 3 months. The therapists are caring and professional."</p>
+        <h4>— Parent of 5-year-old</h4>
+    </div>
+
+    <div class="testimonial-card">
+        <p>"A wonderful, structured environment. We feel supported as a family."</p>
+        <h4>— Parent of 7-year-old</h4>
+    </div>
+
+</section>
+
+<section id="programs">
+    <h2>Programs</h2>
+    <ul>
+        <li><strong>Early Intervention (2–5 years)</strong></li>
+        <li><strong>School Readiness (5–8 years)</strong></li>
+        <li><strong>Social Skills Group</strong></li>
+    </ul>
+</section>
+
+<section id="contact" class="contact-section">
+
+    <h2>Contact Us</h2>
+    <p class="contact-subtitle">
+        We’re here to support your child’s developmental journey. Reach out to schedule an appointment.
+    </p>
+
+    <div class="contact-container">
+
+        <!-- Left Side Info -->
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p><strong>📍 Location:</strong> Gulshan 2, Dhaka, Bangladesh</p>
+            <p><strong>📞 Phone:</strong> +880-XXXXXXXX</p>
+            <p><strong>✉ Email:</strong> info@beyondbarriers.com</p>
+
+            <a href="https://wa.me/880XXXXXXXXXX" class="whatsapp-btn" target="_blank">
+                WhatsApp Consultation
+            </a>
+        </div>
+
+       
+
+    </div>
+
+<div class="map-container">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.6858862802674!2d90.41340407215853!3d23.794197378640483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7a694a35323%3A0x9ed144fbbd2fc809!2s4%20Rd%2095%2C%20Dhaka%201212!5e0!3m2!1sen!2sbd!4v1772460209949!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        width="100%" 
+        height="350" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+</div>
+
+</section>
+<footer>
+    © 2026 Beyond Barriers Gulshan | All Rights Reserved
+</footer>
+
+<script>
+const cards = document.querySelectorAll(".card, .testimonial-card, .why-grid div");
+
+window.addEventListener("scroll", () => {
+    cards.forEach(card => {
+        const position = card.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+
+        if(position < screenPosition) {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+        }
+    });
+});
+</script>
+
+</body>
+</html>
